@@ -21,7 +21,6 @@ export default function ListaProdutos() {
                 renderItem={({ item }) => (
                     <View>
                         <ItemProduto
-                            id={item.id}
                             nome={item.nome}
                             quantidade={item.quantidade}
                             valor={item.valor}

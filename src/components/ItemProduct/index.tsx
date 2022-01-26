@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { Produto } from "../../types/produto";
 import { StyleSheet } from "react-native";
 
-export default function ItemProduto({ id, nome, quantidade, valor }: Produto) {
+export default function ItemProduto({nome, quantidade, valor }: Produto) {
     return (
         <View style={styles.container}>
             <Text style={styles.label}>Nome:</Text>
