@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList, ScrollView, VirtualizedList } from 'react-native';
 import ItemProduto from '../ItemProduct';
 import { Produto } from '../../types/produto';
 
@@ -15,27 +15,29 @@ export default function ListaProdutos() {
     }, []);
 
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <FlatList
                 data={produtos}
                 renderItem={({ item }) => (
-                    <View>
+                    <ScrollView>
                         <ItemProduto
+                            id={item.id}
                             nome={item.nome}
                             quantidade={item.quantidade}
                             valor={item.valor}
                         />
-                    </View>
+                    </ScrollView>
                 )}
             />
-        </View>
+        </ScrollView >
     );
 }
 
 const styles = StyleSheet.create({
     container: {
+        alignContent: 'center',
         flex: 1,
         backgroundColor: '#fff',
-        marginTop: 30,
-    },
+        marginTop: 30
+    }
 });

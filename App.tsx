@@ -5,18 +5,19 @@ export default function App() {
   return (
     <View >
         <Text style={styles.header} >Lista de produtos</Text>
-        <ListaProdutos />
+        <Text >
+          <ListaProdutos />
+        </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   header: {
-    // backgroundColor: 'green',
     alignItems: 'center',
     paddingTop: 20,
     textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 25
-  }
+    // fontWeight: 'bold',
+    fontSize: 25, 
+  },
 });
